@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "19EB97CA-58C9-49EE-90D1-478919AC4DAA"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F1077425-F4F1-4807-9485-E71DEE51C651"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../Users/uniquestrategy/Library/Developer/Xcode/DerivedData/MQTTClient-hkznsuzlztckdyasvywbuenxtacu/SourcePackages/checkouts/CocoaMQTT/Source/CocoaMQTT.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "459"
+            endingLineNumber = "459"
+            landmarkName = "publish(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C1DAABE4-F92A-45E1-BDE9-AECF90254E6F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../Users/uniquestrategy/Library/Developer/Xcode/DerivedData/MQTTClient-hkznsuzlztckdyasvywbuenxtacu/SourcePackages/checkouts/CocoaMQTT/Source/CocoaMQTT.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "467"
+            endingLineNumber = "467"
+            landmarkName = "publish(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "292A41BA-6457-4997-9E8B-5C880910904F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../Users/uniquestrategy/Library/Developer/Xcode/DerivedData/MQTTClient-hkznsuzlztckdyasvywbuenxtacu/SourcePackages/checkouts/CocoaMQTT/Source/CocoaMQTT.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "693"
+            endingLineNumber = "693"
+            landmarkName = "didReceive(_:publish:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ECDE66D1-A0BE-45D2-998E-17520B008638"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../Users/uniquestrategy/Library/Developer/Xcode/DerivedData/MQTTClient-hkznsuzlztckdyasvywbuenxtacu/SourcePackages/checkouts/CocoaMQTT/Source/CocoaMQTT.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "644"
+            endingLineNumber = "644"
+            landmarkName = "didReceive(_:connack:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E1A3EE6-D9CC-41EB-A36B-428331B7928D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../Users/uniquestrategy/Library/Developer/Xcode/DerivedData/MQTTClient-hkznsuzlztckdyasvywbuenxtacu/SourcePackages/checkouts/CocoaMQTT/Source/CocoaMQTT.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "711"
+            endingLineNumber = "711"
+            landmarkName = "didReceive(_:puback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "96A1234A-113F-4C34-810E-CF27B338DF8A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../Users/uniquestrategy/Library/Developer/Xcode/DerivedData/MQTTClient-hkznsuzlztckdyasvywbuenxtacu/SourcePackages/checkouts/CocoaMQTT/Source/CocoaMQTT.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "720"
+            endingLineNumber = "720"
+            landmarkName = "didReceive(_:pubrec:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FE0B3C6A-A475-46C6-BD82-FAE1BAB58956"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../Users/uniquestrategy/Library/Developer/Xcode/DerivedData/MQTTClient-hkznsuzlztckdyasvywbuenxtacu/SourcePackages/checkouts/CocoaMQTT/Source/CocoaMQTT.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "726"
+            endingLineNumber = "726"
+            landmarkName = "didReceive(_:pubrel:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "51E69CE2-8C93-4769-A354-CE8404C0CF38"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../Users/uniquestrategy/Library/Developer/Xcode/DerivedData/MQTTClient-hkznsuzlztckdyasvywbuenxtacu/SourcePackages/checkouts/CocoaMQTT/Source/CocoaMQTT.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "732"
+            endingLineNumber = "732"
+            landmarkName = "didReceive(_:pubcomp:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CA6768E2-7297-41E1-A88A-C290374BF344"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../Users/uniquestrategy/Library/Developer/Xcode/DerivedData/MQTTClient-hkznsuzlztckdyasvywbuenxtacu/SourcePackages/checkouts/CocoaMQTT/Source/CocoaMQTT.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "741"
+            endingLineNumber = "741"
+            landmarkName = "didReceive(_:suback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AE09A6A2-C8DB-47B2-8F1F-05B5A695522E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../Users/uniquestrategy/Library/Developer/Xcode/DerivedData/MQTTClient-hkznsuzlztckdyasvywbuenxtacu/SourcePackages/checkouts/CocoaMQTT/Source/CocoaMQTT.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "768"
+            endingLineNumber = "768"
+            landmarkName = "didReceive(_:unsuback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "07D53439-3D40-4E7E-A4BF-37CA529FBCC9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../Users/uniquestrategy/Library/Developer/Xcode/DerivedData/MQTTClient-hkznsuzlztckdyasvywbuenxtacu/SourcePackages/checkouts/CocoaMQTT/Source/CocoaMQTT.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "783"
+            endingLineNumber = "783"
+            landmarkName = "didReceive(_:pingresp:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CB4365D8-D8E6-4E13-8FA1-B207C9120BA4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../Users/uniquestrategy/Library/Developer/Xcode/DerivedData/MQTTClient-hkznsuzlztckdyasvywbuenxtacu/SourcePackages/checkouts/CocoaMQTT/Source/CocoaMQTT.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "392"
+            endingLineNumber = "392"
+            landmarkName = "connect(timeout:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "85D9DEE9-FE7E-4137-82D8-5974524135B6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../Users/uniquestrategy/Library/Developer/Xcode/DerivedData/MQTTClient-hkznsuzlztckdyasvywbuenxtacu/SourcePackages/checkouts/CocoaMQTT/Source/CocoaMQTT.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "394"
+            endingLineNumber = "394"
+            landmarkName = "connect(timeout:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A1A181F7-8703-434A-8D51-352DACD1E1EA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../Users/uniquestrategy/Library/Developer/Xcode/DerivedData/MQTTClient-hkznsuzlztckdyasvywbuenxtacu/SourcePackages/checkouts/CocoaMQTT/Source/CocoaMQTT.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "389"
+            endingLineNumber = "389"
+            landmarkName = "connect(timeout:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "631401C6-B8C7-41CF-9E25-13177CCD31A7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../Users/uniquestrategy/Library/Developer/Xcode/DerivedData/MQTTClient-hkznsuzlztckdyasvywbuenxtacu/SourcePackages/checkouts/CocoaMQTT/Source/CocoaMQTT.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "485"
+            endingLineNumber = "485"
+            landmarkName = "subscribe(_:qos:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1595D46A-71B2-489A-8E2F-989F1FF7DCE5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../Users/uniquestrategy/Library/Developer/Xcode/DerivedData/MQTTClient-hkznsuzlztckdyasvywbuenxtacu/SourcePackages/checkouts/CocoaMQTT/Source/CocoaMQTT.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "390"
+            endingLineNumber = "390"
+            landmarkName = "connect(timeout:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F2F69F7A-CA62-4D9D-AC4F-68F322B263B4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MQTTClient/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "subscribeToTopic(topic:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
