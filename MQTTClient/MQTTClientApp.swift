@@ -13,7 +13,15 @@ struct MQTTClientApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().frame(minWidth: 1200, minHeight: 850)
+                .onAppear {
+                    if let window = NSApplication.shared.windows.first {
+                        window.setContentSize(NSSize(width: 1200, height: 850))
+                        window.styleMask = [.titled, .resizable, .closable, .miniaturizable]
+                        window.title = "Image Viewer"
+                    }
+                }
+
         }
     }
 }

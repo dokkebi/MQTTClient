@@ -10,7 +10,6 @@ import CocoaMQTT // CocoaMQTT 라이브러리를 사용합니다.
 import SystemConfiguration
 import UserNotifications
 
-
 enum MQTTConnectionStatus {
     case disconnected
     case connecting
@@ -71,6 +70,8 @@ class IoTManager: CocoaMQTTDelegate{
     init() {
         connectToIoTDevice()
     }
+   
+    var refreshAction: (() -> Void)? // 클로저 프로퍼티 추가
     
     var mqtt: CocoaMQTT!
     
@@ -91,6 +92,8 @@ class IoTManager: CocoaMQTTDelegate{
     func mqtt(_ mqtt: CocoaMQTT, didConnectAck ack: CocoaMQTTConnAck){
         self.mqttClient.connectionStatus = .didConnectAck
         print("mqtt didConnectAck")
+        let topic = "l2rnoti"
+        mqtt.subscribe(topic)
     }
     
     ///
@@ -118,9 +121,14 @@ class IoTManager: CocoaMQTTDelegate{
                 // 이미지를 알림에 포함하여 표시
                 self.showNotification(with: image)
             }else{
+                if message.string == "capture"{
+                    self.refreshAction?()
+                }else{
+                    // 문자열 메시지를 수신했을 때의 처리
+                    self.sendNotification( message:message.string ?? "리니지2레볼루션")
+                }
                 print("mqtt didReceiveMessage text")
-                // 문자열 메시지를 수신했을 때의 처리
-                self.sendNotification( message:message.string ?? "리니지2레볼루션")
+                
             }
         }
     }
@@ -305,6 +313,44 @@ struct ContentView: View {
     @State private var selectedImage: Image?
     var iotManager = IoTManager()
     @ObservedObject var mqttStatus : MQTTClient
+    
+    @State private var imageURL = URL(string: "http://211.208.112.39:8081/l2r/Screen")!
+    @State private var refreshKey = UUID() // 상태 변수 추가
+    @State private var imageSize: CGSize = .zero // 이미지 크기 상태 변수
+    @State private var isLoading = false // 이미지 로딩 상태 변수
+    
+    // 이미지 뷰의 초기 크기
+    private let initialImageViewSize: CGSize = CGSize(width: 1001, height: 574)
+    
+    func refreshImage() {
+        // 이미지 URL을 변경하여 새로고침
+        refreshKey = UUID() // refreshKey 업데이트
+        isLoading = true // 로딩 시작
+        imageURL = URL(string: "http://211.208.112.39:8081/l2r/Screen?\(refreshKey)")!
+        loadImageSize() // 이미지 새로 로드 시 크기도 다시 로드
+    }
+
+    private func loadImageSize() {
+        guard let url = URL(string: "http://211.208.112.39:8081/l2r/Screen?\(refreshKey)") else { return }
+        
+        // 비동기적으로 이미지를 로드하고 크기를 가져옴
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil,
+                  let nsImage = NSImage(data: data) else { return }
+            
+            DispatchQueue.main.async {
+                self.imageSize = nsImage.size
+                print(self.imageSize.width)
+                print(self.imageSize.height)
+                isLoading = false // 로딩 완료
+            }
+        }.resume()
+    }
+
+    private func setImageSize(for image: Image) {
+        // 이미지를 로드한 후 크기를 설정하는 로직이 필요 없으므로 비워 둠
+    }
+    
     init(iotManager: IoTManager = IoTManager()) {
         self.iotManager = iotManager
         self.mqttStatus = iotManager.mqttClient
@@ -364,14 +410,72 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     .cornerRadius(10)
             }
-            .padding()
-            .frame().frame(width: 300, height: 400)
+            
+            HStack{
+                Spacer()
+                ZStack {
+                    if imageSize != .zero {
+                        AsyncImage(url: imageURL) { phase in
+                            switch phase {
+                            case .empty:
+                                ProgressView()
+                                    .progressViewStyle(CircularProgressViewStyle()) // 로딩바 스타일 설정
+                                    .frame(width: 50, height: 50) // 로딩바의 크기 고정
+                            case .success(let image):
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit) // 이미지 성공적으로 로드되었을 때 표시할 뷰
+                            case .failure:
+                                Image(systemName: "exclamationmark.triangle") // 로드 실패 시 표시할 뷰
+                            @unknown default:
+                                EmptyView()
+                            }
+                        }
+                        .frame(width: initialImageViewSize.width, height: initialImageViewSize.height)
+                        //.frame(width: geometry.size.width, height: geometry.size.height) // 프레임 크기 조절
+                        .overlay(
+                            Color.clear // 이미지 뷰와 같은 크기의 빈 뷰 추가하여 버튼 위치 조정
+                                .frame(width: initialImageViewSize.width, height: initialImageViewSize.height)
+                        )
+                    } else {
+                        Color.clear // 이미지가 로드되지 않은 경우에도 빈 뷰를 사용하여 크기를 고정
+                            .frame(width: initialImageViewSize.width, height: initialImageViewSize.height)
+                    }
+                    
+                    if isLoading {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle()) // 로딩바 스타일 설정
+                            .frame(width: 50, height: 50) // 로딩바의 크기 고정
+                        //.scaleEffect(1) // 로딩바 크기 조절
+                    }
+                }
+                Spacer()
+            }
+                 
+            // 새로 고침 버튼
+            Button(action: {
+                refreshImage()
+            }) {
+                Text("새로고침")
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
+                    
+            }.disabled(isLoading) // 이미지 로딩 중에는 버튼을 비활성화
+            
+            
         }.onAppear {
+            loadImageSize()
             //let topic = "l2rnoti"
             //iotManager.subscribeToTopic(topic: topic)
             print(iotManager.mqttClient.connectionStatus)
             //let topic = "l2rnoti"
             //iotManager.subscribeToTopic(topic: topic)
+            
+            self.iotManager.refreshAction = {
+                refreshImage()
+            }
         }.onReceive(NotificationCenter.default.publisher(for: Notification.Name("ImageReceived"))) { notification in
             if let image = notification.object as? Image {
                 selectedImage = image
@@ -384,6 +488,7 @@ struct ContentView: View {
             completionHandler()
         }
     }
+    
     
     
 }
