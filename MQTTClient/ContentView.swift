@@ -72,6 +72,7 @@ class IoTManager: CocoaMQTTDelegate{
     }
    
     var refreshAction: (() -> Void)? // 클로저 프로퍼티 추가
+    var activeAction:(() -> Void)?
     
     var mqtt: CocoaMQTT!
     
@@ -123,6 +124,9 @@ class IoTManager: CocoaMQTTDelegate{
             }else{
                 if message.string == "capture"{
                     self.refreshAction?()
+                    print("active... 1 ")
+                    self.activeAction?()
+                    print("active... 2")
                 }else{
                     // 문자열 메시지를 수신했을 때의 처리
                     self.sendNotification( message:message.string ?? "리니지2레볼루션")
@@ -347,6 +351,9 @@ struct ContentView: View {
         }.resume()
     }
 
+    func active(){
+        NSApp.activate(ignoringOtherApps: true)
+    }
     private func setImageSize(for image: Image) {
         // 이미지를 로드한 후 크기를 설정하는 로직이 필요 없으므로 비워 둠
     }
@@ -475,6 +482,9 @@ struct ContentView: View {
             
             self.iotManager.refreshAction = {
                 refreshImage()
+            }
+            self.iotManager.activeAction = {
+                active()
             }
         }.onReceive(NotificationCenter.default.publisher(for: Notification.Name("ImageReceived"))) { notification in
             if let image = notification.object as? Image {
