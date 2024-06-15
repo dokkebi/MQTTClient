@@ -128,8 +128,11 @@ class IoTManager: CocoaMQTTDelegate{
                     self.activeAction?()
                     print("active... 2")
                 }else{
-                    // 문자열 메시지를 수신했을 때의 처리
                     self.sendNotification( message:message.string ?? "리니지2레볼루션")
+                    self.executeAfterDelay(seconds: 2.0) {
+                        // 문자열 메시지를 수신했을 때의 처리
+                        
+                    }
                 }
                 print("mqtt didReceiveMessage text")
                 
@@ -137,6 +140,12 @@ class IoTManager: CocoaMQTTDelegate{
         }
     }
     
+    // n초 후에 실행할 함수
+    func executeAfterDelay(seconds: Double, completion: @escaping () -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            completion()
+        }
+    }
     ///
     func mqtt(_ mqtt: CocoaMQTT, didSubscribeTopics success: NSDictionary, failed: [String]){
         self.mqttClient.connectionStatus = .didSubscribeTopics
